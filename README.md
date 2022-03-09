@@ -15,3 +15,11 @@ Prediction Output
 ![Screenshot_8](https://user-images.githubusercontent.com/64541739/157403735-26933e41-a581-45c6-87de-225100435b82.png)
 
 This can be read as 'WIN': 'T' (True)
+
+Tools Used:
+
+Visual Studio Code
+
+Sklearn
+
+Pandas
