@@ -5,8 +5,8 @@
 
 # Tools Used:
 
-Visual Studio Code
+**Visual Studio Code**
 
-Sklearn
+**Sklearn**
 
-Pandas
+**Pandas**
