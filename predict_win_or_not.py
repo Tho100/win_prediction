@@ -1,23 +1,16 @@
 import pandas as pd 
-from sklearn.preprocessing import LabelEncoder
-from sklearn import preprocessing
-data = pd.read_excel("C:\\users\\HP\\Documents\\Datascience task\\win_prediction.xlsx")
 
-le = preprocessing.LabelEncoder()
+data = pd.read_excel("C:\\users\\HP\\Documents\\datascience task\\win_prediction.xlsx")
+x = data[['Kill','Death']].values
+y = data[['Won']].values
 
-inputs = data.drop(['Win'],axis='columns')
-target = data['Win']
+from sklearn.model_selection import train_test_split
 
-inputs['kill_n'] = le.fit_transform(inputs['Kill'])
-inputs['death_n'] = le.fit_transform(inputs['Death'])
+x_train,x_test,y_train,y_test = train_test_split(x,y,train_size=.11)
 
-inputs_n = inputs.drop(['Kill','Death'],axis='columns')
-inputs_n
+from sklearn.linear_model import LogisticRegression
 
-from sklearn.naive_bayes import GaussianNB
+model = LogisticRegression()
+model.fit(x,y)
 
-classifier = GaussianNB()
-
-classifier.fit(inputs_n,target)
-classifier.score(inputs_n,target)
-classifier.predict([[3,0]]) # Kills = 12, Death = 0, Win = T (True)
+y_predicted = model.predict(x_test)
